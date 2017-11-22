@@ -2,10 +2,10 @@
 #include "i386.h"
 #include "multiboot.h"
 
-#define null_desc                 (0x0000000000000000ULL)
-#define code32_desc               (0x00cf9b000000ffffULL)
-#define code64_desc               (0x00af9b000000ffffULL)
-#define data32_desc               (0x00cf93000000ffffULL)
+#define NULL_DESC                 (0x0000000000000000ULL)
+#define CODE32_DESC               (0x00cf9b000000ffffULL)
+#define CODE64_DESC               (0x00af9b000000ffffULL)
+#define DATA32_DESC               (0x00cf93000000ffffULL)
 
 #define CS_SELECTOR  segment_selector(1, SEGMENT_SELECTOR_GDT, SEGMENT_SELECTOR_KERNEL)
 #define CS64_SELECTOR  segment_selector(2, SEGMENT_SELECTOR_GDT, SEGMENT_SELECTOR_KERNEL)
@@ -13,10 +13,10 @@
 
 static segment_descriptor_t __attribute__((aligned(8)))          _gdt[] =
 {
-   { .raw = null_desc   },
-   { .raw = code32_desc },
-   { .raw = code64_desc },
-   { .raw = data32_desc },
+   { .raw = 0   },
+   { .raw = CODE32_DESC },
+   { .raw = CODE64_DESC },
+   { .raw = DATA32_DESC },
 };
 
 

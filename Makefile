@@ -1,4 +1,4 @@
-PGM=bin
+PGM=osloader
 #SOURCES :=$(wildcard *.c) $(wildcard *.S)  $(wildcard *.cc)
 SOURCES := start.s init.c i386.c lib.c elf.c
 OBJS := $(patsubst %.c,%.o,$(patsubst %.s,%.o,$(SOURCES)))
@@ -19,9 +19,6 @@ T :=a
 all-main: prepare df all
 
 all: $(OBJS)
-	#$(RM) $@ $^
-	# $(TOP_DIR)
-	$(info $(T) $(origin T))
 	$(LD) $(LDFLAGS) -o $(PGM) $(OBJS) -Tld.script
 
 include rule.mk

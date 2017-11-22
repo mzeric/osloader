@@ -18,13 +18,6 @@ void panic(const char * str){
 	exit(1);
 }
 /*
-** This code works under 32 or 64 bits
-** However, 32 bits code truncates offsets
-** that can not fit into 32 bits addresses
-** by making use of "offset_t" which is
-** "unsigned long" (4 bytes under 32 bits).
-*/
-/*
 Elf64 struct references:
 	https://www.cs.stevens.edu/~jschauma/631/elf.html
 */
