@@ -1,5 +1,5 @@
 # OS Loader
-[multiboot Specification] (https://www.gnu.org/software/grub/manual/multiboot/multiboot.html)
+multiboot Specification: https://www.gnu.org/software/grub/manual/multiboot/multiboot.html
 
 
 # How to Load
@@ -24,3 +24,6 @@ menuentry "rtems"{
 * load elf_64 image
 * detect the load address from the image itself
 * load binary
+
+# todo
+* support parameters
